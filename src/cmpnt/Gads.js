@@ -6,6 +6,8 @@ export default class Gads extends React.Component {
   }
 
 render () {
+  const visible=1;
+  if(visible===1){
     return (
         <ins className='adsbygoogle'
           style={{ display: 'block' }}
@@ -13,7 +15,10 @@ render () {
           data-ad-slot='5437714785'
           data-ad-format='auto' 
           data-full-width-responsive="true"/>
-    );
+    );}
+    else{
+      return (null)
+    }
   }
 }
 
