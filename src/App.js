@@ -67,13 +67,13 @@ function App() {
           </table>
           </div>
             <div className="form-group mt-3">
-            {/* <Gads /> */}
+            <Gads />
             </div>
           </div>
         </div>
       </div>
       <div className="fixed-bottom">
-      {/* <Gads /> */}
+      <Gads />
       </div>
     </>
   );
