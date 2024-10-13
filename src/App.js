@@ -36,6 +36,9 @@ function App() {
             <label htmlFor="exampleFormControlInput1 " className="display-5 text-center">Final Price</label>
             <p className="display-2 text-center text-success">{finalPrice}</p>
           </div>
+          <div className="form-group mt-2">
+            <Gads />
+            </div>
           <div className="form-group mt-5 row">
           <span className="lead">BreakDown</span>
           <table class="table">
@@ -66,9 +69,9 @@ function App() {
             </tbody>
           </table>
           </div>
-            <div className="form-group mt-3">
+            {/* <div className="form-group mt-3">
             <Gads />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
