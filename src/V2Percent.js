@@ -31,7 +31,6 @@ function V2Percent() {
   const percentCalc = (price, percentag) => {
     let percentageamount = (price * (percentag / 100))
     let final_pricee = price + percentageamount
-
     let result = {
       percentamount: percentageamount,
       final_price: final_pricee
@@ -67,7 +66,7 @@ function V2Percent() {
             <div className="row mt-2">
               <div className="form-group col-6">
                 <label htmlFor="initialPrice " className="lead col-form-label">Base Price</label>
-                <p className="col-sm-10 display-5 text-center text-success">{finalPrice}</p>
+                <p className="col-sm-10 display-5 text-center text-success">{finalPrice.toFixed(2)}</p>
               </div>
 
               <div className="form-group col-6" >
@@ -81,7 +80,7 @@ function V2Percent() {
 
             <div className="form-group mt-2 row">
               <label htmlFor="exampleFormControlInput1 " className="display-5 text-center">Final Price</label>
-              <p className="display-2 text-center text-success">{finalPrice2}</p>
+              <p className="display-2 text-center text-success">{finalPrice2.toFixed(2)}</p>
             </div>
             <div className="form-group mt-2">
             <Gads />
@@ -105,17 +104,17 @@ function V2Percent() {
                   <tr>
                     <th scope="row">Base Price</th>
                     <td></td>
-                    <td className="text-success font-weight-bold">{finalPrice}</td>
+                    <td className="text-success font-weight-bold">{finalPrice.toFixed(2)}</td>
                   </tr>
                   <tr>
                     <th scope="row">Percentage | Amount</th>
-                    <td>{percent === undefined ? "--" : percent2} %</td>
-                    <td className="text-primary">+ {percentAmount2}</td>
+                    <td>{percent === undefined ? "--" : percent2.toFixed(2)} %</td>
+                    <td className="text-primary">+ {percentAmount2.toFixed(2)}</td>
                   </tr>
                   <tr>
                     <th scope="row">Final Price</th>
                     <td></td>
-                    <td className="text-success font-weight-bold">{finalPrice2}</td>
+                    <td className="text-success font-weight-bold">{finalPrice2.toFixed(2)}</td>
                   </tr>
                 </tbody>
               </table>
