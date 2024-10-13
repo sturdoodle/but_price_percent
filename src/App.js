@@ -66,15 +66,13 @@ function App() {
             </tbody>
           </table>
           </div>
-            {/* <div className="form-group mt-3">
+            <div className="form-group mt-3">
             <Gads />
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
-      <div className="fixed-bottom">
-      <Gads />
-      </div>
+      
     </>
   );
 }
