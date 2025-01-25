@@ -1,4 +1,6 @@
 'use client'
+import "bootstrap/dist/css/bootstrap.css";
+import "../ex-dio/style.css";
 import React, { useEffect, useState } from "react";
 import TimeCopy from "./TimeCopy";
 

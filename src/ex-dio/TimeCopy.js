@@ -38,7 +38,7 @@ function TimeCopy() {
     e.preventDefault();
     setJsonInput("");
     setInputStartTime("");
-    setfinalResult([])
+    setfinalResult([]);
   };
 
   // let finalResult = [];
@@ -69,70 +69,124 @@ function TimeCopy() {
     });
   }
 
-  // console.log(finalResult);
+  console.log(finalResult);
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Enter Start Date:
-            <input
-              type="date"
-              value={InputStartDate}
-              name="inputStartDate"
-              onChange={handleChange}
-              placeholder="2024-01-01"
-            />
-          </label>
-        </div>
-        <div>
-          <p>Paste your JSON data here:</p>
-          <textarea
-            rows="6"
-            cols="40"
-            name="inputJson"
-            value={jsonInput}
-            onChange={handleChange}
-            placeholder='{"status": "success", "data": {"candles": [[...]]}}'
-          />
-        </div>
+      <div className="container col-xl-12 col-xxl-10 px-4 py-3">
+        <div className="row lg-5 py-3">
+          <div className="col-lg-5 text-center text-lg-start py-4 mb-3 sectionn sect1 align-middle">
+            <h1 className="display-4 fw-bold lh-1 mb-3">Hello 😀..!</h1>
+            <form onSubmit={handleSubmit}>
+              <div className="input-group mb-3">
+                <span className="input-group-text">Select Date</span>
+                <input
+                  className="form-control"
+                  type="date"
+                  value={InputStartDate}
+                  name="inputStartDate"
+                  aria-label="Username"
+                  onChange={handleChange}
+                  placeholder="2024-01-01"
+                />
+              </div>
+              <div className="mb-3">
+                <label for="json_input_id_21" class="form-label">
+                  Paste your JSON data here
+                </label>
+                {/* <p>Paste your JSON data here:</p> */}
+                <textarea
+                  rows="6"
+                  cols="40"
+                  className="form-control"
+                  id="json_input_id_21"
+                  name="inputJson"
+                  value={jsonInput}
+                  onChange={handleChange}
+                  placeholder='{"status": "success", "data": {"candles": [[...]]}}'
+                />
+              </div>
 
-        <div>
-          <label>
-            Enter Start Time:
-            <input
-              // type="time"
-              value={InputStartTime}
-              name="inputStartTime"
-              onChange={handleChange}
-              placeholder="15:15"
-              // autocomplete="off"
-            />
-          </label>
+              <div className="input-group mb-3">
+                <span className="input-group-text">Enter Start Time</span>
+                <input
+                  className="form-control"
+                  // type="time"
+                  value={InputStartTime}
+                  name="inputStartTime"
+                  onChange={handleChange}
+                  placeholder="15:15"
+                  // autocomplete="off"
+                />
+              </div>
+              <div style={{ marginTop: "1em" }} className="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" className="btn btn-primary">
+                  Process
+                </button>
+                <button
+                  type="clear"
+                  className="btn btn-danger"
+                  onClick={handleclear}
+                  // style={{ marginLeft: "1em" }}
+                >
+                  Clear
+                </button>
+              </div>
+            </form>
+          </div>
+
+          {/* side section */}
+
+          {finalResult && finalResult.length>0?
+          <div className="pl-3 col-md-11 mx-auto col-lg-6 sectionn sidesection">
+            {/* <table className="table  table-striped" > */}
+            <table className="table ">
+              <thead>
+                <tr>
+                  <th
+                    style={{
+                      border: "1px solid black",
+                      borderCollapse: "collapse",
+                    }}
+                  >
+                    Time
+                  </th>
+                  <th
+                    style={{
+                      border: "1px solid black",
+                      borderCollapse: "collapse",
+                    }}
+                  >
+                    Price
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {finalResult.map((item, key) => (
+                  <tr key={key}>
+                    <td
+                      style={{
+                        border: "1px solid black",
+                        borderCollapse: "collapse",
+                      }}
+                    >
+                      {item[0]}
+                    </td>
+                    <td
+                      style={{
+                        border: "1px solid black",
+                        borderCollapse: "collapse",
+                      }}
+                    >
+                      {item[1]}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>:""}
         </div>
-        <div style={{marginTop:"1em"}}>
-        <button type="submit">Process</button>
-        <button type="clear" onClick={handleclear} style={{marginLeft:"1em"}}>Clear</button>
-        </div>
-      </form>
-      <br/>
-      <table style={{border:"1px solid black",borderCollapse:'collapse' ,marginLeft:"1.5rem",borderRadius:"20px"}}>
-        <thead>
-          <tr>
-            <th style={{border:"1px solid black",borderCollapse:'collapse'}}>Time</th>
-            <th style={{border:"1px solid black",borderCollapse:'collapse'}}>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {finalResult.map((item, key) => (
-            <tr key={key}>
-              <td style={{border:"1px solid black",borderCollapse:'collapse'}}>{item[0]}</td>
-              <td style={{border:"1px solid black",borderCollapse:'collapse'}}>{item[1]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      </div>
     </>
   );
 }

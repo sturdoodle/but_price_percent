@@ -1,0 +1,25 @@
+.sectionn {
+    background-color: #fff;
+    border-radius: 32px;
+    padding: 28px 28px 0 28px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  .sidesection {
+    padding: 28px 28px 0 12px
+  }
+  
+body {
+    background-color: #f3f6fd;
+    font-size: 1rem;
+    /* font-family: 'Rajdhani', sans-serif; */
+    font-family: 'DM Sans', sans-serif;
+  }
+
+.table{
+  line-height: 0.5em;
+}
