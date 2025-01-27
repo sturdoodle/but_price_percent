@@ -71,6 +71,18 @@ function TimeCopy() {
 
   console.log(finalResult);
 
+  const style_color =(item_price)=>{
+    if(item_price>finalResult[0][1]){
+      return "lightgreen";
+    }
+    else if(item_price<finalResult[0][1]){
+      return "indianred";
+    }
+    else{
+      return "white";
+    }
+  }
+
   return (
     <>
       <div className="container col-xl-12 col-xxl-10 px-4 py-3">
@@ -96,7 +108,7 @@ function TimeCopy() {
                 </label>
                 {/* <p>Paste your JSON data here:</p> */}
                 <textarea
-                  rows="6"
+                  rows="9"
                   cols="40"
                   className="form-control"
                   id="json_input_id_21"
@@ -163,6 +175,7 @@ function TimeCopy() {
               </thead>
               <tbody>
                 {finalResult.map((item, key) => (
+                  
                   <tr key={key}>
                     <td
                       style={{
@@ -176,6 +189,7 @@ function TimeCopy() {
                       style={{
                         border: "1px solid black",
                         borderCollapse: "collapse",
+                        backgroundColor:style_color(item[1]) ,
                       }}
                     >
                       {item[1]}
@@ -188,7 +202,7 @@ function TimeCopy() {
         </div>
       </div>
     </>
-  );
+  ); 
 }
 
 export default TimeCopy;
